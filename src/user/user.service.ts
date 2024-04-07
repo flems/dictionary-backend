@@ -69,7 +69,12 @@ export class UserService {
       where: {
         id
       },
-      data
+      data,
+      select: {
+        name: true,
+        id: true,
+        email: true
+      }
     })
   }
 }
