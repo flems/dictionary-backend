@@ -66,7 +66,7 @@ export class AuthService {
         })
 
         const refreshToken = this.jwt.sign(data, {
-            expiresIn: '1h'
+            expiresIn: '7d'
         })
 
         return { accessToken, refreshToken }
@@ -93,7 +93,7 @@ export class AuthService {
             domain: process.env.DOMAIN,
             expires: expiresIn,
             // if producation, для https
-            secure: true,
+            secure: false,
             // lax if productions
             sameSite: 'none'
         })
@@ -105,7 +105,7 @@ export class AuthService {
             domain: process.env.DOMAIN,
             expires: new Date(0),
             // if producation, для https
-            secure: true,
+            secure: false,
             // lax if productions
             sameSite: 'none'
         })
