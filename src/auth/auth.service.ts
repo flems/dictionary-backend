@@ -7,7 +7,7 @@ import { Response } from 'express'
 
 @Injectable()
 export class AuthService {
-    EXPIRE_DAY_REFRESH_TOKEN = 1
+    EXPIRE_DAY_REFRESH_TOKEN = 7
     REFRESH_TOKEN_NAME = 'refreshToken'
 
     constructor(
@@ -93,7 +93,7 @@ export class AuthService {
             domain: process.env.DOMAIN,
             expires: expiresIn,
             // if producation, для https
-            secure: false,
+            secure: true,
             // lax if productions
             sameSite: 'none'
         })
@@ -105,7 +105,7 @@ export class AuthService {
             domain: process.env.DOMAIN,
             expires: new Date(0),
             // if producation, для https
-            secure: false,
+            secure: true,
             // lax if productions
             sameSite: 'none'
         })
