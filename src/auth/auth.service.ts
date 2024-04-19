@@ -93,7 +93,7 @@ export class AuthService {
             domain: '31.129.45.72',
             expires: expiresIn,
             // if producation, для https
-            secure: true,
+            secure: false,
             // lax if productions
             sameSite: 'none'
         })
@@ -105,7 +105,7 @@ export class AuthService {
             domain: '31.129.45.72',
             expires: new Date(0),
             // if producation, для https
-            secure: true,
+            secure: false,
             // lax if productions
             sameSite: 'none'
         })
