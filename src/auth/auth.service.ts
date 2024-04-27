@@ -88,6 +88,9 @@ export class AuthService {
         const expiresIn = new Date()
         expiresIn.setDate(expiresIn.getDate() + this.EXPIRE_DAY_REFRESH_TOKEN)
 
+        console.log(process.env.DOMAIN);
+        
+
         res.cookie(this.REFRESH_TOKEN_NAME, refreshToken, {
             httpOnly: true,
             domain: process.env.DOMAIN,
@@ -95,7 +98,7 @@ export class AuthService {
             // if producation, для https
             secure: true,
             // lax if productions
-            sameSite: 'none'
+            sameSite: 'lax'
         })
     }
 
