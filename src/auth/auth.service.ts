@@ -96,7 +96,7 @@ export class AuthService {
             domain: process.env.NEXT_PUBLIC_DOMAIN,
             expires: expiresIn,
             // if producation, для https
-            secure: true,
+            secure: false,
             // lax if productions
             sameSite: 'lax'
         })
@@ -108,9 +108,9 @@ export class AuthService {
             domain: process.env.DOMAIN,
             expires: new Date(0),
             // if producation, для https
-            secure: true,
+            secure: false,
             // lax if productions
-            sameSite: 'none'
+            sameSite: 'lax'
         })
     }
 
